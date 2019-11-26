@@ -5,6 +5,18 @@ Distributed Key-value Store
 * Multiple clients will be communicating with a single coordinating server (Master) in a JSON based message format and send the data through sockets using TCP channel.
 * Operations on store key_value pair are atomic.Two-Phase Commit protocol is implemented to ensure atomic operations.
  ![proj4](proj4-overview.png)
+ 
+ Operations performed by clients
+ =====
+ * GET: To get the value corresponding to key.
+ * PUT : To store the key_value pair to the server.
+ * DEL: To delete the key_value pair from the server.
+ 
+ 
+ Why Consistent Hashing ??
+ ====
+ * To distribute the incoming requests uniformly among the set of "n" slave servers.
+ * To dynamically add/remove a server because when we add/remove a server, we need to move the minimal amount of data between the servers.
 
 Consistent Hashing
 ====
